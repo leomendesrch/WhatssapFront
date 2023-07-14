@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(229, 226, 221, 1) 0%, rgba(210, 215, 219, 1) 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.back-ground{
+  background-color:#08ac84;
+  width: 100%;
+  height: 13%;
+  position: absolute;
+  top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.chat-container{
+  width: 95%;
+  max-width: 1800px;
+  height: 96%;
+  position: absolute;
+  background-color: white;
+  display: flex;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-container{
   display: flex;
   flex-direction: column;
+  width: 35%;
+  background-color: gray;
+}
+
+/* 1 */
+
+.user-info{
+  display: flex;
+  padding: 10px 15px;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+}
+
+.user-image {
+  height: 34px;
+  border-radius: 50%;
+}
+
+.user-settings {
+  display: flex;
+  gap: 5px;
+}
+
+.icon-container{
+  width: 34px;
+  height: 34px;
+  background-color: rgb(198, 203, 206);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* 2 */
+
+.search-container{
+  display: flex;
+  padding: 4px 7px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-input{
+  border-radius: 5px;
+  padding: 3px 8px;
+  border: none;
+  
+}
+
+.search-filter-icon{
+  height: 24px;
+  width: 24px;
+}
+
+/* 3 */
+
+.mensages-container{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* messages */
+
+.chat-header{
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-display-container{
+  overflow-y: auto;
+}
+
+.send-message-container{
+  display: flex;
+  padding: 5px 15px;
 }
