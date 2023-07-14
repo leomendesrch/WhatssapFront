@@ -1,3 +1,10 @@
+:root{
+  --green-color: #08ac84;
+  --light-gray: #f0f2f5;
+  --font-gray: #667781;
+}
+
+
 *{
   box-sizing: border-box;
   padding: 0;
