@@ -8,11 +8,13 @@ import PeopleIcon from '../../assets/people.png'
 import StatusIcon from '../../assets/status.png'
 import CommentIcon from '../../assets/comment.png'
 import LeoIcon from '../../assets/eu.png'
-import { UserContainerProps } from '../../types/user-container';
+import { useWhatssapContext } from '../../hooks/useWhatssapGlobalContext';
 
 const ContactsArray = [0,0,0]
 
-function UserContainer({ messages }: UserContainerProps){
+function UserContainer(){
+  const { messages } = useWhatssapContext()
+
   return(
     <>
     <UserContainerComponent>
@@ -25,7 +27,7 @@ function UserContainer({ messages }: UserContainerProps){
               </IconContainer>
 
               <IconContainer>
-                <IconImage src={StatusIcon}alt="StatusBtn"></IconImage>
+                <IconImage src={StatusIcon} alt="StatusBtn"></IconImage>
               </IconContainer>
 
               <IconContainer>

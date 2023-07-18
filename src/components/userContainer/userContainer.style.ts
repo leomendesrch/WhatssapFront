@@ -114,9 +114,11 @@ export const FilterIconComponent = styled.img`
 export const ContactsMessage = styled.div`
   width: 100%;
   max-width: 100%;
+
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar{
     width: 6px;
@@ -139,6 +141,7 @@ export const ContactsMessageItem = styled.div`
 export const UserMessageContainer = styled.div`
   display: flex;
   gap: 15px;
+
 `
 
 
@@ -152,19 +155,20 @@ export const ContactImage = styled.img`
 export const UserMessageInfo = styled.div`
   display: flex;
   flex-direction: column;
+  text-overflow: ellipsis;
 `
 
 
 export const TitleMessage = styled.span`
-  max-width: 480px;
-  overflow-x: hidden;
+  max-width: 350px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
 `
 
 export const LastMessage = styled.div`
   display: flex;
-  max-width: 350px;
+  max-width: 90%;
   font-size: 14px;
   color: var(--font-gray);
 `
@@ -182,7 +186,7 @@ export const LastMessageTime = styled.span`
 `
 
 
-export const UnreadMessageQuantity = styled.div`
+export const UnreadMessageQuantity = styled.span`
 
 `
 

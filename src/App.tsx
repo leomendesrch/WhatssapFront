@@ -1,37 +1,30 @@
 import './App.css';
 
-import { useEffect, useState } from 'react';
-
-
-import socket from 'socket.io-client'
-
-import { userProps } from './types/user-types';
-import { messageProps } from './types/message-types';
+import { useEffect } from 'react';
 
 import { BackGround, ChatContainer, Container } from './App.style';
 import UserContainer from './components/userContainer/userContainer';
 import LoginPage from './components/loginPage/loginPage';
 import MessagesContainer from './components/messagesContainer/messagesContainer';
 
-
-const io = socket('http://localhost:4000')
+import { useWhatssapContext } from './hooks/useWhatssapGlobalContext';
+import { messageProps } from './types/message-types';
 
 function App() {
-  const [name, setName] = useState("");
-  const [joined, setJoined] = useState(false);
-  const [users, setUsers] = useState<userProps[]>([]);
-  const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState<messageProps[]>([]);
+  const {io, setUsers, joined, setMessages} = useWhatssapContext()
+
 
   useEffect(() => {
     io.on("users", (users) => setUsers(users))
-    io.on("message", (message) => setMessages((messages) => [...messages, message]))
+    io.on("message", (message: messageProps) => setMessages((prevMessages: messageProps[]) => [...prevMessages, message]))
   }, [])
+
+
 
   if(!joined){
     return(
       <>
-        <LoginPage name={name} setName={setName} setJoined={setJoined}/>
+        <LoginPage />
       </>
     )
   }
@@ -40,7 +33,7 @@ function App() {
     <Container>
       <BackGround></BackGround>
       <ChatContainer>
-        <UserContainer messages={messages}/>
+        <UserContainer />
         <MessagesContainer />
       </ChatContainer>
     </Container>

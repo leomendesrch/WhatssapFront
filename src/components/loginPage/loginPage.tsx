@@ -1,12 +1,15 @@
 import { Container, DescriptionContainer, InputContainer, InputLabel, LoginButton, LoginDescription, LoginTitle, Logo, NameInput, PageContainer, PhotoInput } from "./loginPage.style";
 
 import WhatssapLogo from '../../assets/whatssap-logo.png'
-import { LoginTypes } from "../../types/login-types";
+
 import socket from 'socket.io-client'
+
+import { useWhatssapContext } from "../../hooks/useWhatssapGlobalContext";
 
 const io = socket('http://localhost:4000')
 
-function LoginPage({name, setName, setJoined}: LoginTypes){
+function LoginPage(){
+  const {name, setName,setJoined} = useWhatssapContext()
 
   const handleJoin = () => {
     if(name){

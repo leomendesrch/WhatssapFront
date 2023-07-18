@@ -4,14 +4,12 @@ import SettingsIcon from '../../assets/more.png'
 import SendIcon from '../../assets/send.png'
 import BackGroundImage from '../../assets/chat-background.png'
 
-import socket from 'socket.io-client'
+import {ChatHeader, ChatInput, ChatInputArea, ChatMessagesArea, IconContainer, IconImage, MessageContainerComponent, MessageSettings, MyUserMessage, OtherUserMessage, SendImage, UserContainerMessageLeft, UserContainerMessageRight, ContactsMessageItem, LastMessage, TitleMessage, UserImage, UserMessageContainer, UserMessageInfo } from './messagesContainer.style';
 
-import { ChatHeader, ChatInput, ChatInputArea, ChatMessagesArea, IconContainer, IconImage, MessageContainerComponent, MessageSettings, MyUserMessage, OtherUserMessage, SendImage, UserContainerMessageLeft, UserContainerMessageRight } from './messagesContainer.style';
-import { ContactsMessageItem, LastMessage, TitleMessage, UserImage, UserMessageContainer, UserMessageInfo } from '../userContainer/userContainer.style';
+import { useWhatssapContext } from '../../hooks/useWhatssapGlobalContext'
 
-const io = socket('http://localhost:4000')
-
-function MessagesContainer({}){
+function MessagesContainer(){
+  const { io, users, message, messages ,setMessage, name} = useWhatssapContext()
 
   const handleSendMessage = () => {
     if(message){

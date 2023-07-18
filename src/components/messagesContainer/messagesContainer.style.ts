@@ -113,5 +113,66 @@ export const SendImage = styled.img`
   cursor: pointer;
 `
 
+export const ContactsMessageItem = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 10px 15px;
+  align-items: center;
+  position: relative;
+`
+
+export const UserMessageContainer = styled.div`
+  display: flex;
+  gap: 15px;
+`
+
+export const UserImage = styled.img`
+  width: 42px;
+  height: 40px;
+  border-radius: 50%;
+`
+
+export const ContactImage = styled.img`
+  width: 50px;
+  height: 47px;
+  border-radius: 50%;
+`
+
+
+export const UserMessageInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+
+export const TitleMessage = styled.span`
+  overflow-x: hidden;
+`
+
+export const LastMessage = styled.div`
+  display: flex;
+  font-size: 14px;
+  color: var(--font-gray);
+  white-space: break-spaces;
+`
+
+
+export const MessageData = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: var(--font-gray);
+`
+
+export const LastMessageTime = styled.span`
+
+`
+
+
+export const UnreadMessageQuantity = styled.span`
+
+`
+
 
 
